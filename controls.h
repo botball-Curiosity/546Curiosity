@@ -63,6 +63,17 @@ void openClaw() {
     msleep(100);
 
 }
+
+void openSlow() {
+	int i=0;
+	int y = 500-get_servo_position(1);
+	int z = get_servo_position(1);
+	for(i=0; i<8; i++) {
+	    set_servo_position(1, z+((i+1)*y)/8);
+	    msleep(50);
+	}
+}
+
 void closeClaw() {
 
     set_servo_position(1, 1100);
